@@ -2,10 +2,8 @@ class Solution:
     def isPowerOfFour(self, n: int) -> bool:
         if(n<1):
             return False
-        while(n%4==0):
-            n=n//4
-            
-        return n==1
+        x=math.log10(n)/math.log10(4)
+        return x%1==0
 
     
         
