@@ -8,17 +8,18 @@ class Solution:
         #         curr=stack.pop()
         # if len(stack)==0 or top=="(" or current=="(":
         #     stack.append()
-        open=0
-        close=0
-        for i in range(0,len(s)):
-            if(s[i]=="("):
-                open+=1
+        st=[]
+        c=0
+        for i in s:
+            if i=="(":
+                st.append(i)
             else:
-                if(open==0):
-                    close+=1
+                if st and st[-1]:
+                    st.pop()
                 else:
-                    open-=1
-        return open+close
+                    c+=1
+        return c+len(st)
+                 
 
         
         
